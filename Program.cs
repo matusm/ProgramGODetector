@@ -62,9 +62,10 @@ namespace ProgramGODetector
                 LogAndDisplay($"Custom string: {cs}");
 
 
-            DisplayOnly("press 'r' to reprogram detector - any other key to quit");
+            DisplayOnly("Are you sure to modify the detector settings?");
+            DisplayOnly("press 'y' to modify detector settings - any other key to quit");
 
-            if (Console.ReadKey(true).Key == ConsoleKey.R)
+            if (Console.ReadKey(true).Key == ConsoleKey.Y)
             {
                 device.WriteDetectorStatusToRam(newSetting);
                 device.SaveRamToEeprom();
