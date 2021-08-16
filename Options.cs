@@ -18,13 +18,13 @@ namespace ProgramGODetector
         [Option('u', "unit", DefaultValue = null, HelpText = "Measurement unit (code)")]
         public int? UnitCode { get; set; }
 
-        #nullable enable
-        [Option('n', "name", DefaultValue = null, HelpText = "Measurement unit (code)")]
+#nullable enable
+        [Option('n', "name", DefaultValue = null, HelpText = "Detector name (4 characters)")]
         public string? DetectorName { get; set; }
 
-        [Option('c', "customString", DefaultValue = null, HelpText = "Measurement unit (code)")]
+        [Option('c', "customString", DefaultValue = null, HelpText = "Custom string (16 characters)")]
         public string? CustomString { get; set; }
-        #nullable disable
+#nullable disable
 
         [Option("comment", DefaultValue = "---", HelpText = "User supplied comment string.")]
         public string UserComment { get; set; }
@@ -48,8 +48,8 @@ namespace ProgramGODetector
                 AdditionalNewLineAfterOption = false,
                 AddDashesToOption = true
             };
-            string preamble = "Program to operate the photo-current meter P-9710 (Gigahertz-Optik). It is controlled via its RS232 interface. " +
-                "Measurement results are logged in a file.";
+            string preamble = "Program to re-program detector heads for the photo-current meter P-9710 (Gigahertz-Optik). Operations are perfomed via the RS232 interface of the optometer. " +
+               "All modifications are logged in a file.";
             help.AddPreOptionsLine(preamble);
             help.AddPreOptionsLine("");
             help.AddPreOptionsLine($"Usage: {AppName} [options]");
