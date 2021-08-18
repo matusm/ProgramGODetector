@@ -11,16 +11,27 @@ Technically the calibration data is stored using a 24LC16B (16 Kb I2C compatible
 
 ![Image of connector interior](IMG_5412.jpg)
 
-The detector to be updated must be conneted to a P-9710 optometer and this in turn to a computer via its serial interface. The parameters to modify must be supplied as command line options. The original detector settings are saved in the logfile as a memory dump.
 
+## Usage
 
-## Command Line Usage
+The detector to be updated must be connected to a P-9710 optometer and this in turn to a computer via its serial interface. The parameters are supplied as command line options. The original detector setting is displayed and saved in the logfile as a memory dump. After using this procedure the detector has to be unpluged and reconected to the optometer. Alternativly one can switch off the optometer and switch it on again.
 
-```
-ProgramGODetector [options]
-```
 
 ### Options
+
+Options for detector parameters
+
+`--serialNumber (-s)` : Detector serial number.
+
+`--calibrationFactor (-f)` : Calibration factor (sensitivity) in A/unit.
+
+`--unit (-u)` : Measurement unit (code).
+
+`--name (-n)` : Detector name (4 characters at most, longer strings will be truncated).
+
+`--customString (-c)` : Custom string (16 characters at most, longer strings will be truncated).
+
+Administrative related options
 
 `--comment` : User supplied string to be included in the log file metadata.
 
@@ -28,15 +39,29 @@ ProgramGODetector [options]
 
 `--logfile` : Log file name.
 
-`--serialNumber (-s)` : Detector serial number.
+## Examples
 
-`--calibrationFactor (-f)` : Calibration factor in A/unit.
+To show the current setting of the detector without any modification, just do not set any parameter options:
+```
+ProgramGODetector --port="COM2"
+```
 
-`--unit (-u)` : Measurement unit (code).
+The main usage is to update the sensitivity following a new calibration:
+```
+ProgramGODetector --calibrationFactor=4.7635e-11 --customString="Nr. 2001/0023"
+```
 
-`--name (-n)` : Detector name (4 characters at most).
+## Caveats
 
-`--customString (-c)` : Custom string (16 characters at most).
+* The program (or better the library Bev.Instruments.P9710.Detector) makes use of a secret password for writing to the EEPROM. This password is a 4-digit number and can be found easily by brute force guessing. Since it is hard coded one must change the source code for different optometers.
+
+* All strings must be composed of ASCII characters only! No umlauts, smilies and that like!
+
+* Numerical values (currently the sensitivity only) use the dot as decimal separator.
+
+* Parameters which can not be parsed correctly will not destroy the current values. No user feedback is provided in this case.
+
+* With this version it is only possible to modify broad band calibration data. This means no spectral data can be written to the detector head.
 
 
 ## Dependencies
