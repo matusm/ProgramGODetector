@@ -6,7 +6,7 @@ namespace ProgramGODetector
 {
     public class Options
     {
-        [Option('p', "port", DefaultValue = "COM9", HelpText = "Serial port name.")]
+        [Option('p', "port", DefaultValue = "COM1", HelpText = "Serial port name.")]
         public string Port { get; set; }
 
         [Option('s', "serialNumber", DefaultValue = null, HelpText = "Detector serial number")]

@@ -41,6 +41,7 @@ namespace ProgramGODetector
             DisplayOnly($"Application:  {appName} {appVersionString}");
             LogOnly($"Application:  {appName} {appVersion}");
             LogAndDisplay($"StartTimeUTC: {timeStamp:dd-MM-yyyy HH:mm}");
+            LogAndDisplay($"SerialPort:   {device.DevicePort}");
             LogAndDisplay($"Comment:      {options.UserComment}");
             LogOnly(fatSeparator);
             DisplayOnly("");
