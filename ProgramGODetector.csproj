@@ -30,6 +30,9 @@
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bev.Instruments.P9710">
+      <HintPath>..\Bev.Instruments.P9710\bin\Release\Bev.Instruments.P9710.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="Bev.Instruments.P9710.Detector">
       <HintPath>..\Bev.Instruments.P9710.Detector\bin\Release\Bev.Instruments.P9710.Detector.dll</HintPath>
