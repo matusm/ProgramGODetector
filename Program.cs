@@ -43,6 +43,10 @@ namespace ProgramGODetector
             LogOnly($"Application:  {appName} {appVersion}");
             LogAndDisplay($"StartTimeUTC: {timeStamp:dd-MM-yyyy HH:mm}");
             LogAndDisplay($"SerialPort:   {device.DevicePort}");
+            LogAndDisplay($"InstrumentID: {device.InstrumentManufacturer} {device.InstrumentID}");
+            LogAndDisplay($"Battery:      {device.InstrumentBatteryLevel} %");
+            LogAndDisplay($"DetectorID:   {device.DetectorID}");
+            LogAndDisplay($"Calibration:  {device.DetectorCalibrationFactor} A/({device.DetectorPhotometricUnit})");
             LogAndDisplay($"Comment:      {options.UserComment}");
             LogOnly(fatSeparator);
             DisplayOnly("");
