@@ -79,9 +79,11 @@ namespace ProgramGODetector
 
                 if (Console.ReadKey(true).Key == ConsoleKey.Y)
                 {
+                    Console.Write("Reprogramming of detector ...");
                     device.WriteDetectorStatusToRam(newSetting);
                     device.SaveRamToEeprom();
-                    LogAndDisplay("Reprogramming of detector successful.");
+                    Console.Write("\rReprogramming of detector - done\n");
+                    LogOnly("Reprogramming of detector successful.");
                 }
                 else
                 {
