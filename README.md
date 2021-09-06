@@ -67,22 +67,25 @@ Options for detector parameters:
 23   L 
 24   nit 
 ```
+Codes larger than 24 will cause the optometer to refuse the detector settings. 
+
 
 ## Examples
 
-To show the current setting of the detector without any modification, just do not set any parameter options. You may set other option:
+To show the current setting of the detector without any modification, just do not set any parameter options. You may set other options, though:
 ```
 ProgramGODetector --port="COM2"
 ```
 
-The main usage of this program is to update the sensitivity following a new calibration:
+
+The main usage of this program is to update the sensitivity following a new calibration. This is done like this:
 ```
 ProgramGODetector --calibrationFactor=4.7635e-11 --customString="Nr. 2001/0023"
 ```
 
 ## Caveats
 
-* The program (or better the library Bev.Instruments.P9710.Detector) makes use of a secret password for writing to the EEPROM. This password is a 4-digit number and can thus be found easily by brute force guessing. Since it is hard coded one must change the source code for different optometers.
+* The program (or actualy the library Bev.Instruments.P9710.Detector) makes use of a secret password for writing to the EEPROM. This password is a 4-digit number and can thus be found easily by brute force guessing. Since it is hard coded one must change the source code for different optometers.
 
 * All strings must be composed of ASCII characters only! No umlauts, smileys and that like!
 
@@ -90,7 +93,7 @@ ProgramGODetector --calibrationFactor=4.7635e-11 --customString="Nr. 2001/0023"
 
 * Parameters which cannot be parsed correctly will not overwrite the current values. No user feedback is provided in this case!
 
-* With this version it is only possible to modify broad band calibration data. This means no spectral data can be written to the detector head.
+* With this version it is not only possible to write spectral calibration data.
 
 ## Memory Dump
 
@@ -167,6 +170,7 @@ For a detailed decription of the different parameters consult the documentation.
 
 Bev.Instruments.P9710.Detector: https://github.com/matusm/Bev.Instruments.P9710.Detector
 
-CommandLineParser: https://github.com/commandlineparser/commandline 
+Bev.Instruments.P9710: https://github.com/matusm/Bev.Instruments.P9710
 
+CommandLineParser: https://github.com/commandlineparser/commandline 
 
