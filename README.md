@@ -23,7 +23,7 @@ Generic options:
 
 `--comment`  User supplied string to be included in the log file.
 
-`--port (-p)`  Serial port name where the optometer is connected
+`--port (-p)`  Serial port name the optometer is connected to.
 
 `--logfile`  Log file name.
 
@@ -85,7 +85,7 @@ ProgramGODetector --calibrationFactor=4.7635e-11 --customString="Nr. 2001/0023"
 
 ## Caveats
 
-* The program (or actualy the library Bev.Instruments.P9710.Detector) makes use of a secret password for writing to the EEPROM. This password is a 4-digit number and can thus be found easily by brute force guessing. Since it is hard coded one must change the source code for different optometers.
+* The program (or actualy the library At.Matus.Instruments.GO.Optometer) makes use of a secret password for writing to the EEPROM. This password is a 4-digit number and can thus be found easily by brute force guessing. Since it is hard coded one must change the source code for different optometers.
 
 * All strings must be composed of ASCII characters only! No umlauts, smileys and that like!
 
@@ -93,7 +93,7 @@ ProgramGODetector --calibrationFactor=4.7635e-11 --customString="Nr. 2001/0023"
 
 * Parameters which cannot be parsed correctly will not overwrite the current values. No user feedback is provided in this case!
 
-* With this version it is not only possible to write spectral calibration data.
+* With this version it is not possible to write spectral calibration data.
 
 ## Memory Dump
 
@@ -166,11 +166,16 @@ Before modifing any setting the program dumps the annotated memory to the screen
 ```
 For a detailed decription of the different parameters consult the documentation.
 
-## Dependencies
 
-Bev.Instruments.P9710.Detector: https://github.com/matusm/Bev.Instruments.P9710.Detector
+## Installation
+If you do not want to build the application from the source code you can use the released binaries. Just copy the .exe and the .dll files to a directory of your choice. This direcory should be included in the user's PATH variable.
 
-Bev.Instruments.P9710: https://github.com/matusm/Bev.Instruments.P9710
+## Dependencies and Acknowledgments
+* [At.Matus.Instruments.GO.Optometer](https://github.com/matusm/At.Matus.Instruments.GO.Optometer)  
+* [At.Matus.StatisticPod](https://github.com/matusm/At.Matus.StatisticPod)
+* [CommandLineParser](https://github.com/commandlineparser/commandline)
 
-CommandLineParser: https://github.com/commandlineparser/commandline 
+---
+
+**Note**: This app is not officially affiliated with or endorsed by Gigahertz-Optik GmbH.
 

@@ -1,10 +1,8 @@
-﻿using System;
+﻿using At.Matus.Instruments.GO.Optometer;
+using System;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
-using Bev.Instruments.P9710;
-using Bev.Instruments.P9710.Detector;
-
 
 namespace ProgramGODetector
 {
