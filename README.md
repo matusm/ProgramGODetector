@@ -85,7 +85,7 @@ ProgramGODetector --calibrationFactor=4.7635e-11 --customString="Nr. 2001/0023"
 
 ## Caveats
 
-* The program (or actualy the library At.Matus.Instruments.GO.Optometer) makes use of a secret password for writing to the EEPROM. This password is a 4-digit number and can thus be found easily by brute force guessing. Since it is hard coded one must change the source code for different optometers.
+* The program (or actualy the library At.Matus.Instruments.GO.Optometer) makes use of a secret password for writing to the EEPROM. This password is a 4-digit number and can thus be found easily by brute force guessing. Since it is hard coded, one must change the source code for different optometers.
 
 * All strings must be composed of ASCII characters only! No umlauts, smileys and that like!
 
